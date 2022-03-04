@@ -3,7 +3,9 @@
 name: test pushing docker hub
 
 # Controls when the workflow wi ll run
-on: push 
+on: 
+    pull_request:
+      types: [closed]
   # Triggers the w orkflow on push or pull reques t events but only for the master branch
   # push:
   #   branches: [ master ]
