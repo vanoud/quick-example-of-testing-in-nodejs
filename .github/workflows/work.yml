@@ -38,9 +38,6 @@ jobs:
     - name: cover test 
       run: npm run cover 
 
-    - run: mkdir -p /artifact/quick-example-of-testing-in-nodejs/reports/awesome-reports
-
-    - run: echo hello > /artifact/quick-example-of-testing-in-nodejs/reports/awesome-reports/hello.txt
 
     - uses: actions/upload-artifact@v3
       with:
