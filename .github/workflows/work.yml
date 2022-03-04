@@ -26,9 +26,23 @@ jobs:
     steps:
     - name: recuperation du repo 
       uses: actions/checkout@v3
+    - name: Set Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+        
     - name: install
       run: npm install
     - name: starting project 
       run: npm run start
     - name: cover test 
       run: npm run cover 
+
+    - run: mkdir -p /artifact/quick-example-of-testing-in-nodejs/reports/awesome-reports
+
+    - run: echo hello > /artifact/quick-example-of-testing-in-nodejs/reports/awesome-reports/hello.txt
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: /artifact/quick-example-of-testing-in-nodejs/reports/awesome-reports/world.txt
