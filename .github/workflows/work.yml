@@ -68,4 +68,4 @@ jobs:
         with:
           context: . 
           push: true 
-          tags: ${{ secrets.LOGIN }}/contianer-nodejs:${{ APP_VERSION }}
+          tags: ${{ secrets.LOGIN }}/contianer-nodejs:${{ env.APP_VERSION }}
