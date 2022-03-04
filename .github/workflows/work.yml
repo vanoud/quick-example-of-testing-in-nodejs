@@ -19,6 +19,9 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [8,10,12]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
 
@@ -27,10 +30,11 @@ jobs:
     - name: recuperation du repo 
       uses: actions/checkout@v3
     - name: Set Node.js 12.x
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: 12.x
-        
+        node-version: ${{ matrix:node-version }}
+    - name : info node version testing
+      run: echo ${{ node-version }}
     - name: install
       run: npm install
     - name: starting project 
