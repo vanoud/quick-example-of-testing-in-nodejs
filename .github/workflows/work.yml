@@ -68,4 +68,4 @@ jobs:
         with:
           context: . 
           push: true 
-          tags: ${{ secrets.LOGIN }}dossier/container-nodejs:${{ env.APP_VERSION }}
+          tags: ${{ secrets.LOGIN }}vanoud/container-nodejs:${{ env.APP_VERSION }}
