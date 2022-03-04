@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: artefact
+name: test pushing docker hub
 
 # Controls when the workflow wi ll run
 on: push
@@ -51,10 +51,10 @@ jobs:
 
 
   Build:
-    needs: test-unit
+    needs: test-app
     runs-on: ubuntu-latest
     steps:
-      - name: repo 
+      - name: repo checkout
         uses: actions/checkout@v3
       - name: install QEMU
         uses: docker/setup-qemu-action@v1
@@ -63,12 +63,12 @@ jobs:
       - name: docker hub auth 
         uses: docker/login-action@v1
         with:
-          username: ${{ secret.LOGIN }}
-          password: ${{ secret.PASSWORD }}
+          username: ${{ secrets.LOGIN }}
+          password: ${{ secrets.PASSWORD }}
 
       - name: Build & push 
         uses: docker/build-pushaction@v2 
         with:
           context: . 
           push: true 
-          tags: ${{ secret.LOGIN }}/contianer-nodejs
+          tags: ${{ secrets.LOGIN }}/contianer-nodejs
