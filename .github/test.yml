@@ -1,0 +1,30 @@
+# name : test 
+# on: push 
+
+# jobs:
+#   test-failure:
+#     runs-on: ubuntu-latest
+    
+#     steps:
+    
+#     - name: repo checkout 1
+#       uses: actions/checkout@v3
+#     - name: test
+#       id : test
+#       run: exit 1 
+#     - name: create issue
+#       if: failure()
+#       uses: actions-ecosystem/action-create-issue@v1
+#       with:
+#         github_token: $ {{ secret.GITHUB_TOKEN }}
+#       run: echo "issue ici"
+   
+#     - name: pull request validation
+#       uses: devops-infra/action-pull-request@v0.4.2
+#       with:
+#         github_token: $ {{ secret.GITHUB_TOKEN }}
+#         source_branch: dev
+#         target_branch : main 
+#         title : merge de mon code sur le main 
+#         body:
+#           ---- completed success ----
