@@ -42,4 +42,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: /Users/vanoud/Documents/DEV/exo-git/artifact/quick-example-of-testing-in-nodejs/reports/awesome-reports/
+        path: /Users/vanoud/Documents/DEV/exo-git/artifact/quick-example-of-testing-in-nodejs/reports/awesome-reports/mochawesome.html
